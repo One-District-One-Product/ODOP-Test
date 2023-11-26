@@ -17,14 +17,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y wapiti
+          
+      - name: Create Output Directory
+        run: mkdir -p /path/to/output
 
       - name: Run Wapiti Scan
-        run: wapiti http://localhost:3000/ -b  output
+        run: wapiti http://localhost:3000/ -b  /path/to/output
 
       - name: Save Wapiti Scan Results
         run: |
           mkdir wapiti-results
-          output wapiti-results/
+          mv /path/to/output wapiti-results/
         continue-on-error: true
 
       - name: Upload Wapiti Scan Results
