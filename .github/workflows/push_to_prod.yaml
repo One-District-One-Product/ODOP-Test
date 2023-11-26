@@ -101,5 +101,6 @@ jobs:
         with:
           source_file: 'README.md'
           destination_repo: 'One-District-One-Product/ODOP-Prod'
+          destination-branch: 'prod' 
           user_email: 'eng21ct0044@dsu.edu.in'
           user_name: 'Tanya-DSU'
