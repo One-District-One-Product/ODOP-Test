@@ -30,8 +30,14 @@ jobs:
           mv /path/to/output wapiti-results/
         continue-on-error: true
 
-      - name: Upload Wapiti Scan Results
+       - name: Upload Wapiti HTML Report
         uses: actions/upload-artifact@v2
         with:
-          name: wapiti-results
-          path: wapiti-results
+          name: wapiti-html-report
+          path: wapiti-results/wapiti-report.html
+
+      - name: Upload Wapiti XML Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: wapiti-xml-report
+          path: wapiti-results/wapiti-report.xml
