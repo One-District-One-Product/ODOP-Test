@@ -17,20 +17,14 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y wapiti
-          
+
       - name: Create Output Directory
-        run: mkdir -p https://github.com/One-District-One-Product/ODOP-Test/tree/main/.github/workflows
+        run: mkdir -p wapiti-results
 
       - name: Run Wapiti Scan
-        run: wapiti http://localhost:3000/ -b  /path/to/output
+        run: wapiti http://localhost:3000/ -b wapiti-results
 
-      - name: Save Wapiti Scan Results
-        run: |
-          mkdir wapiti-results
-          mv https://github.com/One-District-One-Product/ODOP-Test/tree/main/.github/workflows wapiti-results/
-        continue-on-error: true
-
-       - name: Upload Wapiti HTML Report
+      - name: Upload Wapiti HTML Report
         uses: actions/upload-artifact@v2
         with:
           name: wapiti-html-report
