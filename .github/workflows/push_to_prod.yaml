@@ -86,7 +86,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: codeql-report
-        path: /home/runner/work/ODOP-Test/results/javascript.sarif
+        path: /home/runner/work/ODOP-Test/results/${{ matrix.language }}.sarif
 
   wapiti_scan:
     name: Wapiti DAST Scan
