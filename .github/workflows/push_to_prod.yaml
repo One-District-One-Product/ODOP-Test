@@ -81,6 +81,12 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
 
+    - name: Upload CodeQL SARIF report
+      uses: actions/upload-artifact@v2
+      with:
+        name: codeql-report
+        path: codeql-results.sarif
+
   wapiti_scan:
     name: Wapiti DAST Scan
     runs-on: ubuntu-latest
