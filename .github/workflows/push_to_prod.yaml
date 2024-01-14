@@ -99,10 +99,9 @@ jobs:
 
     - name: Run Wapiti scan
       run: |
-        wapiti -u http://44.213.170.186:3000/ -p -n 5 -b "cookie=value" -o wapiti-report.html
+        wapiti -u http://44.213.170.186:3000/ -n 5 -b "cookie=value" -o wapiti-report.html
+
       
-
-
   push_code_from_test_to_prod:
     runs-on: ubuntu-latest
     needs: [analyze]
