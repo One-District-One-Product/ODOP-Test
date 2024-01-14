@@ -80,7 +80,7 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
-        sarif-file: /home/runner/work/ODOP-Test/results/javascript.sarif
+        sarif-file: /home/runner/work/ODOP-Test/results/${{ matrix.language }}.sarif
 
     - name: Upload CodeQL SARIF report
       uses: actions/upload-artifact@v2
