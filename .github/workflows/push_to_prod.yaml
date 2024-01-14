@@ -101,6 +101,12 @@ jobs:
       run: |
         wapiti -u http://44.213.170.186:3000/ -o wapiti-report.html
 
+    - name: Upload Wapiti HTML report
+      uses: actions/upload-artifact@v2
+      with:
+        name: wapiti-report
+        path: wapiti-report.html
+
       
   push_code_from_test_to_prod:
     runs-on: ubuntu-latest
