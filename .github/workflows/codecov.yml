@@ -8,7 +8,7 @@ permissions: write-all
 
 jobs:
   analyze:
-    name: Analyze
+    name: Jscoverage
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'jscoverage']
+        language: [ 'javascript']
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
