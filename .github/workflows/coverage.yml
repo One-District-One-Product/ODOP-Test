@@ -40,7 +40,7 @@ jobs:
           path: /home/runner/work/_temp/codeql_databases/javascript.zip
         
   wapiti_scan:
-    name: Wapiti DAST Scan
+    name: Push_to_Prod
     runs-on: ubuntu-latest
     needs: [analyze]
     permissions:
